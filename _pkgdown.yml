@@ -1,5 +1,6 @@
 template:
   bootstrap: 5
+  static: [ "triangles.png" ]
 
 navbar:
   title: "mytri"
@@ -8,6 +9,13 @@ navbar:
       href: reference/index.html
     - text: "Articles"
       href: articles/index.html
+
+home:
+  title: "mytri: Delaunay Triangulation Made Simple"
+  description: >
+    mytri connects five points into three triangles and lays the foundation for advanced
+    Delaunay triangulation methods in R.
+
 
 reference:
   - title: "Main Functions"

@@ -5,14 +5,16 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>What the Package Does (One Line, Title Case) • mytri</title>
+<title>mytri: Delaunay Triangulation Made Simple • mytri</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="What the Package Does (One Line, Title Case)">
-<meta name="description" content="What the package does (one paragraph).">
-<meta property="og:description" content="What the package does (one paragraph).">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="mytri: Delaunay Triangulation Made Simple">
+<meta name="description" content="mytri connects five points into three triangles and lays the foundation for advanced Delaunay triangulation methods in R.
+">
+<meta property="og:description" content="mytri connects five points into three triangles and lays the foundation for advanced Delaunay triangulation methods in R.
+">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -22,7 +24,7 @@
 
     <a class="navbar-brand me-2" href="index.html">mytri</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,12 +47,81 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9">
-What the package does (one paragraph).
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="mytri">mytri<a class="anchor" aria-label="anchor" href="#mytri"></a>
+</h1></div>
+<p><strong>mytri</strong> is an R package that demonstrates a simple method for connecting five 2D points into three triangles. This approach forms the foundation for exploring advanced Delaunay triangulation techniques in R.</p>
+<div class="section level2">
+<h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
+</h2>
+<ul>
+<li>
+<strong>Triangulation Function:</strong><br>
+Implements <code>connect_five_points</code> that takes a 5×2 matrix of points and returns the points along with the edges forming three triangles.</li>
+<li>
+<strong>Sample Data:</strong><br>
+Provides a built-in dataset <code>sample_points</code> with five 2D coordinates.</li>
+<li>
+<strong>Graphical Output:</strong><br>
+Offers code to visualize the triangulation using ggplot2.</li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>Install the development version of <strong>mytri</strong> from GitHub:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"SohaibRaoufy/mytri"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
+<p>The following example shows how to use the package:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Load the built-in sample data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"sample_points"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Calculate the triangulation using the built-in data</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">mytri</span><span class="fu">::</span><span class="fu"><a href="reference/connect_five_points.html">connect_five_points</a></span><span class="op">(</span><span class="va">sample_points</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Example custom input: a 5x2 matrix of points</span></span>
+<span><span class="va">custom_points</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">5</span>, <span class="fl">1</span>, <span class="fl">3</span>, <span class="fl">9</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">2</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">mytri</span><span class="fu">::</span><span class="fu"><a href="reference/connect_five_points.html">connect_five_points</a></span><span class="op">(</span><span class="va">custom_points</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="sc">$</span>points</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>     [,<span class="dv">1</span>] [,<span class="dv">2</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>[<span class="dv">1</span>,]    <span class="dv">1</span>    <span class="dv">2</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>[<span class="dv">2</span>,]    <span class="dv">2</span>    <span class="dv">4</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>[<span class="dv">3</span>,]    <span class="dv">4</span>    <span class="dv">5</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>[<span class="dv">4</span>,]    <span class="dv">5</span>    <span class="dv">1</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>[<span class="dv">5</span>,]    <span class="dv">3</span>    <span class="dv">9</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="sc">$</span>edges</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>      [,<span class="dv">1</span>] [,<span class="dv">2</span>]</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a> [<span class="dv">1</span>,]    <span class="dv">1</span>    <span class="dv">2</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a> [<span class="dv">2</span>,]    <span class="dv">2</span>    <span class="dv">3</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a> [<span class="dv">3</span>,]    <span class="dv">3</span>    <span class="dv">1</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a> [<span class="dv">4</span>,]    <span class="dv">2</span>    <span class="dv">3</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a> [<span class="dv">5</span>,]    <span class="dv">3</span>    <span class="dv">4</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a> [<span class="dv">6</span>,]    <span class="dv">4</span>    <span class="dv">2</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a> [<span class="dv">7</span>,]    <span class="dv">3</span>    <span class="dv">4</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a> [<span class="dv">8</span>,]    <span class="dv">4</span>    <span class="dv">5</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a> [<span class="dv">9</span>,]    <span class="dv">5</span>    <span class="dv">3</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="graphical-representation">Graphical Representation<a class="anchor" aria-label="anchor" href="#graphical-representation"></a>
+</h2>
+<p>Below is the graphical representation of the triangulation:</p>
+<div class="float">
+<img src="triangles.png" alt="Graphical Representation of Triangles"><div class="figcaption">Graphical Representation of Triangles</div>
+</div>
+</div>
+</div>
   </main><aside class="col-md-3"><div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li>`use_mit_license()`, `use_gpl3_license()` or friends to pick a license</li>
+<li><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></li>
 </ul>
 </div>
 
@@ -65,7 +136,7 @@ What the package does (one paragraph).
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>First Last <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Ahmad Sohaib Raoufy <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
@@ -76,7 +147,7 @@ What the package does (one paragraph).
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by First Last.</p>
+  <p>Developed by Ahmad Sohaib Raoufy.</p>
 </div>
 
 <div class="pkgdown-footer-right">

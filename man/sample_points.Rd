@@ -15,7 +15,6 @@ A matrix with 5 rows and 2 columns:
 data("sample_points")
 }
 \description{
-A 5 x 2 matrix of (x, y) coordinates used to demonstrate the function
-\code{connect_five_points}.
+A 5 x 2 matrix of (x, y) coordinates to demonstrate the function.
 }
-\keyword{datasets}
+\keyword{internal}
